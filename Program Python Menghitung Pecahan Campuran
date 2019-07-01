@@ -1,0 +1,107 @@
+# Program Pecahan Campuran
+# b = bulat
+# pm = pembilang
+# py = penyebut
+print "Menghitung Pecahan Campuran"
+print "[1] Penjumlahan \n[2] Pengurangan \n[3] Perkalian \n[4] Pembagian"
+pilih = input("Masukan Pilihan : ")
+if pilih == 1 :
+    b1 = input("Masukan bulat 1 :")
+    pm1 = input("Masukan Pembilang 1 : ")
+    py1 = input("Masukan Penyebut  1 : ")
+    b2 = input("Masukan bulat 2 :")
+    pm2 = input("Masukan Pembilang 2 : ")
+    py2 = input("Masukan Penyebut  2 : ")
+    print "+-------------+"
+    print " " , pm1 , " " , " " , pm2, " "
+    print b1  , "-" , "+" , b2  , "-", " "
+    print " " , py1 , " " , " " , py2, " "
+    print "+-------------+"
+    pm1 = (py1 * b1 ) + pm1
+    pm2 = (py2 * b2) + pm2
+    print pm1 , " " , pm2
+    print "-" , "+" , "-"
+    print py1 , " " , py2
+    print "+-------------+"
+    py = py1 * py2
+    pm1 = (py / py1) * pm1
+    pm2 = (py / py2) * pm2
+    pm = pm1 + pm2
+    print pm1 , " " , pm2 , " " , pm
+    print "-" , "+" , "-" , "=" , "-"
+    print py  , " " , py  , " " , py
+
+elif pilih == 2 :
+    b1 = input("Masukan bulat 1 :")
+    pm1 = input("Masukan Pembilang 1 : ")
+    py1 = input("Masukan Penyebut  1 : ")
+    b2 = input("Masukan bulat 2 :")
+    pm2 = input("Masukan Pembilang 2 : ")
+    py2 = input("Masukan Penyebut  2 : ")
+    print "+-------------+"
+    print " " , pm1 , " " , " " , pm2, " "
+    print b1  , "-" , "-" , b2  , "-", " "
+    print " " , py1 , " " , " " , py2, " "
+    print "+-------------+"
+    pm1 = (py1 * b1 ) + pm1
+    pm2 = (py2 * b2) + pm2
+    print pm1 , " " , pm2
+    print "-" , "-" , "-"
+    print py1 , " " , py2
+    print "+-------------+"
+    py = py1 * py2
+    pm1 = (py / py1) * pm1
+    pm2 = (py / py2) * pm2
+    pm = pm1 - pm2
+    print pm1 , " " , pm2 , " " , pm
+    print "-" , "-" , "-" , "=" , "-"
+    print py  , " " , py  , " " , py
+
+elif pilih == 3 :
+    b1 = input("Masukan bulat 1 :")
+    pm1 = input("Masukan Pembilang 1 : ")
+    py1 = input("Masukan Penyebut  1 : ")
+    b2 = input("Masukan bulat 2 :")
+    pm2 = input("Masukan Pembilang 2 : ")
+    py2 = input("Masukan Penyebut  2 : ")
+    print "+-------------+"
+    print " " , pm1 , " " , " " , pm2, " "
+    print b1  , "-" , "X" , b2  , "-", " "
+    print " " , py1 , " " , " " , py2, " "
+    print "+-------------+"
+    pm1 = (py1 * b1 ) + pm1
+    pm2 = (py2 * b2) + pm2
+    print pm1 , " " , pm2
+    print "-" , "X" , "-"
+    print py1 , " " , py2
+    print "+-------------+"
+    pm = pm1 * pm2
+    py = py1 * py2
+    print pm1 , " " , pm2 , " " , pm
+    print "-" , "X" , "-" , "=" , "-"
+    print py1 , " " , py2 , " " , py
+
+elif pilih == 4 :
+    b1 = input("Masukan bulat 1 :")
+    pm1 = input("Masukan Pembilang 1 : ")
+    py1 = input("Masukan Penyebut  1 : ")
+    b2 = input("Masukan bulat 2 :")
+    pm2 = input("Masukan Pembilang 2 : ")
+    py2 = input("Masukan Penyebut  2 : ")
+    print "+-------------+"
+    print " " , pm1 , " " , " " , pm2, " "
+    print b1  , "-" , ":" , b2  , "-", " "
+    print " " , py1 , " " , " " , py2, " "
+    print "+-------------+"
+    pm1 = (py1 * b1 ) + pm1
+    pm2 = (py2 * b2) + pm2
+    print pm1 , " " , pm2
+    print "-" , ":" , "-"
+    print py1 , " " , py2
+    print "+-------------+"
+    pm = pm1 * py2
+    py = py1 * pm2
+    print pm1 , " " , py2 , " " , pm
+    print "-" , "X" , "-" , "=" , "-"
+    print py1 , " " , pm2 , " " , py
+    
