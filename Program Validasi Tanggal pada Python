@@ -1,0 +1,62 @@
+# Program Validasi Tanggal
+
+nama_bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"]
+tanggal = input("Masukan Tanggal  : ")
+bulan = input("Masukan Bulan  : ")
+tahun = input("Masukan Tahun : ")
+kabisat = tahun % 4
+
+if(bulan == 1):
+    hari = 31
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 2):
+    #tahun Kabisat
+    if (kabisat == 0) :
+        hari = 29
+        bln = nama_bulan[bulan - 1]
+    else:
+        hari = 28
+        bln = nama_bulan[bulan - 1]
+elif(bulan == 3):
+    hari = 31
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 4):
+    hari = 30
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 5):
+    hari = 31
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 6):
+    hari = 30
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 7):
+    hari = 31
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 8):
+    hari = 31
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 9):
+    hari = 30
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 10):
+    hari = 31
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 11):
+    hari = 30
+    bln = nama_bulan[bulan - 1]
+elif(bulan == 12):
+    hari = 31
+    bln = nama_bulan[bulan - 1]
+else:
+    hari = -1
+    bln = bulan
+
+bTanggal = tanggal >=1 and tanggal <= hari
+bBulan = bulan >=1 and bulan <=12
+bValid = bTanggal and bBulan
+if(bValid):
+        hasil = "adalah tanggal yang valid."
+else:
+        hasil = "adalah tanggal yang tidak valid."
+
+print tanggal,bln,tahun,hasil
