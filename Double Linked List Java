@@ -1,0 +1,65 @@
+package struktur_data;
+public class Doublelinkedlist {
+    Node head;
+    class Node{
+        int data;
+        Node prev;
+        Node next;
+        Node(int d){
+            data = d ;
+        }
+    }
+    public void prepend(int new_data){
+        Node new_node = new Node(new_data);
+        new_node.next = head;
+        new_node.prev = null;
+        if (head != null)
+            head.prev = new_node;
+        head = new_node;
+    }
+    public void append(int new_data){
+        Node new_node = new Node(new_data);
+        Node last = head;
+        new_node.next = null;
+        if (head == null){
+            new_node.prev = null;
+            head = new_node;
+            return;
+        }
+        while(last.next != null)
+            last = last.next;
+        last.next = new_node;
+        new_node.prev = last;
+    }
+    public void insertafter(Node prev_node,int new_data){
+        if(prev_node == null){
+            return;
+        }
+        Node new_node = new Node(new_data);
+        new_node.next = prev_node.next;
+        prev_node.next = new_node;
+        new_node.prev = prev_node;
+        if (new_node.next != null)
+            new_node.next.prev = new_node;
+    }
+    public void printlist(Node node){
+        Node temp = null;
+        while(node != null){
+            System.out.print(node.data + " ");
+            temp = node;
+            node = node.next;
+        }
+    }
+    public static void main(String[] args) {
+        Doublelinkedlist dll = new Doublelinkedlist();
+        dll.prepend(2);
+        dll.append(3);
+        dll.append(5);
+        dll.append(7);
+        dll.prepend(1);
+        dll.insertafter(dll.head.next,8);
+        System.out.print("Created DLL is  : ");
+        dll.printlist(dll.head);
+        System.out.println("\n");
+    }
+}
