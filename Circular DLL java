@@ -1,0 +1,44 @@
+package struktur_data;
+public class Circular_Doublelinkedlist {
+    static class Node{
+        int data;
+        Node next;
+        Node prev;
+    };
+    static Node insert(Node start,int value){
+        if(start == null){
+            Node new_node = new Node();
+            new_node.data = value;
+            new_node.next = new_node.prev = new_node;
+            start = new_node;
+            return start;
+        }
+        Node last = (start).prev;
+        Node new_node = new Node();
+        new_node.data = value;
+        new_node.next = start;
+        (start).prev = new_node;
+        new_node.prev = last;
+        last.next = new_node;
+        return start;
+    }
+    static void display(Node start){
+        Node temp = start;
+        while(temp.next != start){
+            System.out.printf("%d ",temp.data);
+            temp = temp.next;
+        }
+        System.out.printf("%d ", temp.data);
+    }
+    public static void main(String[] args) {
+        Node start = null;
+        start = insert(start,4);
+        start = insert(start,5);
+        start = insert(start,6);
+        start = insert(start,7);
+        start = insert(start,8);
+        System.out.print("Created Circular DLL : ");
+        display(start);
+        System.out.println("\n");
+    }
+}
