@@ -1,0 +1,138 @@
+class Node :
+
+
+    def __init__(self,data):
+
+        self.data = data
+
+        self.next = None
+
+
+class Circularlinkedlist :
+
+
+
+
+    def __init__(self):
+
+        self.head = None
+
+
+    def push(self,data):
+
+        ptr1 = Node(data)
+
+        temp = self.head
+
+        ptr1.next = self.head
+
+        if self.head != None :
+
+            while(temp.next != self.head):
+
+                temp = temp.next
+
+            temp.next = ptr1
+
+        else:
+
+            ptr1.next = ptr1
+
+
+        self.head = ptr1
+
+        return self.head
+
+
+    def printlist(self):
+
+        temp = self.head
+
+        if self.head != None :
+
+            while(True):
+
+                print "%d" %(temp.data),
+
+                temp = temp.next
+
+                if(temp == self.head):
+
+                    break
+
+
+    def deletenode(self,key):
+
+        if self.head == None :
+
+            return None
+
+        curr = self.head
+
+        prev = Node
+
+        while(curr.data != key):
+
+            if curr.next == self.head :
+
+                print "\nNode yang diberikan tidak ditemukan dalam daftar"
+
+                break
+
+            prev = curr
+
+            curr = curr.next
+
+
+        if curr.next == self.head :
+
+            head = None
+
+            return self.head
+
+        if curr == self.head:
+
+            prev = self.head
+
+            while(prev.next != self.head):
+
+                prev =prev.next
+
+            self.head = curr.next
+
+            prev.next = self.head
+
+        elif curr.next == self.head :
+
+            prev.next = self.head
+
+        else:
+
+            prev.next =curr.next
+
+        return self.head
+
+
+list1 = Circularlinkedlist()
+
+list1.push(2)
+
+list1.push(5)
+
+list1.push(9)
+
+list1.push(10)
+
+list1.push(12)
+
+print "List sebelum didelete :"
+
+list1.printlist()
+
+list1.deletenode(10)
+
+print "\nList Sesudah Didelete :"
+
+list1.printlist()
+
+
